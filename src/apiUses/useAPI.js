@@ -9,6 +9,14 @@ export default function useAPI(url) {
       throw new Error(error);
     }
   };
+  const getById = async (id) => {
+    try {
+      const response = await api.get(`${url}/${id}`);
+      return response.data;
+    } catch (error) {
+      throw new Error(error);
+    }
+  };
   const post = async (data) => {
     try {
       const response = await api.post(url, data);
@@ -36,6 +44,7 @@ export default function useAPI(url) {
 
   return {
     list,
+    getById,
     post,
     put,
     del,

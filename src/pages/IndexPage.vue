@@ -38,7 +38,8 @@
           </q-input>
         </template>
         <template v-slot:body-cell-actions="props">
-          <q-td :props="props">
+          <q-td :props="props" class="q-gutter-sm">
+            <q-btn icon="edit" @click="editCourse(props.row.id)" />
             <q-btn icon="delete" @click="deleteCourse(props.row.id)" />
           </q-td>
         </template>
@@ -51,6 +52,7 @@
 import coursesService from "../services/courses.js";
 import { defineComponent, ref, onMounted } from "vue";
 import { useQuasar } from "quasar";
+import { useRouter } from "vue-router"
 
 export default defineComponent({
   name: "IndexPage",
@@ -60,17 +62,17 @@ export default defineComponent({
 
     const columns = [
       {
-        name: "name",
-        align: "center",
-        label: "Nome",
-        field: "name",
-        sortable: true,
-      },
-      {
         name: "id",
         align: "center",
         label: "ID",
         field: "id",
+        sortable: true,
+      },
+      {
+        name: "name",
+        align: "center",
+        label: "Nome",
+        field: "name",
         sortable: true,
       },
       {
@@ -84,6 +86,7 @@ export default defineComponent({
     ];
 
     const $q = useQuasar();
+    const route = useRouter();
 
     onMounted(() => {
       getCourses();
@@ -124,10 +127,15 @@ export default defineComponent({
       }
     };
 
+    const editCourse = async(id)=>{
+      route.push({name:"formCourse", params:{id}})
+    }
+
     return {
       courses,
       columns,
       deleteCourse,
+      editCourse
     };
   },
 });
