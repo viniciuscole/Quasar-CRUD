@@ -1,0 +1,22 @@
+{
+  "cursos": [
+    {
+      "id": "3",
+      "name": "Engenharia Elétrica",
+      "description": "Curso de engenharia elétrica",
+      "code": "111"
+    },
+    {
+      "id": "3",
+      "name": "Engenharia Elétrica",
+      "description": "Curso de engenharia elétrica",
+      "code": "111"
+    },
+    {
+      "id": "3",
+      "name": "Engenharia Mecanica",
+      "description": "Curso de engenharia elétrica",
+      "code": "111"
+    }
+  ]
+}
