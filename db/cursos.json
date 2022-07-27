@@ -1,22 +1,16 @@
 {
   "cursos": [
     {
-      "name": "Engenharia da Computação",
+      "name": "Engenharia da Computacão",
       "description": "Engenharia mais daora",
       "code": "111",
       "id": 1
     },
     {
-      "name": "editado",
-      "description": "wqeqw",
-      "code": "781",
-      "id": 5
-    },
-    {
-      "name": "AAA",
-      "description": "ABBBBB",
-      "code": "775",
-      "id": 6
+      "name": "Medicina",
+      "description": "Curso chato",
+      "code": "123",
+      "id": 2
     }
   ]
 }
