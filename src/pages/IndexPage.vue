@@ -7,6 +7,7 @@
         :columns="columns"
         row-key="name"
         dark
+        :filter="filter"
         color="amber"
       >
         <template v-slot:top>
@@ -15,11 +16,9 @@
           <q-btn
             class="add-btn"
             dark
-            :disable="loading"
             debounce="300"
             icon="add"
             rounded
-            @click="addRow"
             :to="{ name: 'formCourse' }"
           />
 
@@ -30,6 +29,7 @@
             color="white"
             filled
             v-model="filter"
+            placeholder="Search"
             font-color="white"
           >
             <template v-slot:append>
@@ -52,7 +52,7 @@
 import coursesService from "../services/courses.js";
 import { defineComponent, ref, onMounted } from "vue";
 import { useQuasar } from "quasar";
-import { useRouter } from "vue-router"
+import { useRouter } from "vue-router";
 
 export default defineComponent({
   name: "IndexPage",
@@ -127,15 +127,16 @@ export default defineComponent({
       }
     };
 
-    const editCourse = async(id)=>{
-      route.push({name:"formCourse", params:{id}})
-    }
+    const editCourse = async (id) => {
+      route.push({ name: "formCourse", params: { id } });
+    };
 
     return {
+      filter: ref(""),
       courses,
       columns,
       deleteCourse,
-      editCourse
+      editCourse,
     };
   },
 });
