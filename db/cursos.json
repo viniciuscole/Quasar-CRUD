@@ -7,10 +7,10 @@
       "id": 1
     },
     {
-      "name": "Medicina",
-      "description": "Curso chato",
-      "code": "123",
-      "id": 2
+      "name": "Engenharia Ambiental",
+      "description": "Curso de Engenharia Ambiental",
+      "code": "578",
+      "id": 3
     }
   ]
 }

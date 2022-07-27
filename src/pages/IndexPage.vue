@@ -7,6 +7,7 @@
         :columns="columns"
         row-key="name"
         dark
+        style="background-color: rgb(0, 0, 29); color: whitesmoke"
         :filter="filter"
         color="amber"
       >
@@ -142,6 +143,14 @@ export default defineComponent({
 });
 </script>
 <style>
+.q-page {
+  background: rgb(238, 174, 202);
+  background: linear-gradient(
+    0deg,
+    rgba(238, 174, 202, 0.8) 0%,
+    rgba(148, 187, 233, 1) 100%
+  );
+}
 .add-btn {
   margin-right: 20px;
   background-color: rgb(45 45 45);
